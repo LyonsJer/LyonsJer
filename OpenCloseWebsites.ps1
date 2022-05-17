@@ -1,6 +1,7 @@
 ﻿# WEBSITES.TXT בודק אתרים שונים לפי שנקבע בקובץ
 
-$Websites = Get-Content '\\pnimsrv3\jmjeremy\Websites.txt' 
+#Get-Content from path of file
+$Websites = Get-Content '\\..\..\Websites.txt' 
 
 ForEach($Website in $Websites){
    
