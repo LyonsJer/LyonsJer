@@ -7,7 +7,7 @@ $Network_Drive =  Get-Content '\\..\..\Network_Drives.txt'
 
 
 Foreach ($Drive in $Network_Drive){
-#checks if path is true and creates item
+#checks if path is true and creates item with date as name
 if((Test-Path $Drive) -eq $true){
     New-Item  -Path $Drive -Name $Date -Value "$Drive" -ItemType "file" ; Write-Host "Access Compliant, File Written To $Drive." -fore green
 }
