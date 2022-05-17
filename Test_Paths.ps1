@@ -2,11 +2,12 @@
 
 $Date = Get-Date -Format "dd_MM_yy"
 
-$Network_Drive =  Get-Content '\\pnimsrv3\jmjeremy\Network_Drives.txt' 
+#takes paths from file to allow for numerous and dynamic paths
+$Network_Drive =  Get-Content '\\..\..\Network_Drives.txt' 
 
 
 Foreach ($Drive in $Network_Drive){
-
+#checks if path is true and creates item
 if((Test-Path $Drive) -eq $true){
     New-Item  -Path $Drive -Name $Date -Value "$Drive" -ItemType "file" ; Write-Host "Access Compliant, File Written To $Drive." -fore green
 }
@@ -21,9 +22,9 @@ Foreach ($Drive in $Network_Drive){
 Remove-Item $Drive\$Date
 }
 
-#בודק תקינות כונן איש י
+#בודק תקינות כונן אישי
 $user = $env:Username
-$Path = "\\pnimsrv3\$user"
+$Path = "\\..\$user"
 
 if((Test-Path $Path) -eq $true){
     New-Item  -Path $Path -Name $Date -Value "$Path" -ItemType "file" ; Write-Host "Access Compliant, File Written To $Drive." -fore green
