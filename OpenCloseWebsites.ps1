@@ -5,8 +5,8 @@ $Websites = Get-Content '\\..\..\Websites.txt'
 
 ForEach($Website in $Websites){
    
-$edge_procinfo = Start-Process msedge -ArgumentList "$Website" -PassThru
-$edge_procid = $edge_procinfo.Id
+ Start-Process msedge -ArgumentList "$Website" -PassThru
+ $edge_procinfo.Id
 
 
 }
