@@ -12,7 +12,7 @@ $Mail = $Outlook.CreateItem(0)
 $Mail.To = $email
 
 # כאן תרשום מייל חיצוני חשוב להגדיר את תיבת המייל לשלוח מייל אוטומטי בחזרה
-$Mail.CC = "jl8439246@gmail.com"
+$Mail.CC = "testemail@gmail.com"
 
 #כאן מגדירים את הנושא
  
